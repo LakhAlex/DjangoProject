@@ -24,9 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kkg_!ubo8@rukdyv9exqxo^5)hv-1mxbytaue!e39pd-x*62yh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
 
 
 # Application definition
@@ -119,8 +122,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+MEDIA_URL = "/PycharmProjects/HomeWork/mysite/media/"
+MEDIA_URL = os.path.join(BASE_DIR, '/PycharmProjects/HomeWork/mysite/media/')
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, '/static/') # 추가 : 2023-11-30
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -142,3 +149,6 @@ LOGGING = {
         },
     },
 }
+
+
+
